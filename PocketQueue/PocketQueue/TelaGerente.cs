@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualBasic;
+﻿using DatabasePocketQueue.DAO.Database.IRepositorio;
+using DatabasePocketQueue.DAO.Database.Repositorio;
+using Microsoft.VisualBasic;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -60,6 +62,12 @@ namespace PocketQueue
         }
         private void ChamarSenha_Button_Click(object sender, EventArgs e)
         {
+            IRepositorioSenha rep = new RepositorioSenha();
+            var chamasenha = rep.ChamarSenha();
+            UltimaSenhaGerada_textBox.Text = "N" + chamasenha;
+            var senhachamada = chamasenha - 1;
+            UltimaSenhaChamada_textBox.Text = "N" + senhachamada;
+
             FinalizarAtendimento_Button.Enabled = true;
             ChamarSenha_Button.Enabled = false;
 

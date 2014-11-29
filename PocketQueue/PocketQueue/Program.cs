@@ -16,7 +16,7 @@ namespace PocketQueue
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            Application.Run(new TelaRecepcionista());
+            Application.Run(new TelaAtendente());
             
         }
     }
